@@ -3,10 +3,26 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Report date:15/09/2019</title>
+    <title>Bus incident report</title>
 </head>
 <body>
+
     <h1>Bus Incident Report Form</h1>
+    <h2>This is documenting an:</h2>
+    <div>
+        <input type="checkbox" id="injuryCheck" name="injuryCheck" value="injuryCheck">
+        <label for="injuryCheck">Injury</label>
+    </div>
+    <div>
+        <input type="checkbox" id="firstAidCheck" name="firstAidCheck" value="firstAidCheck">
+        <label for="firstAidCheck">First Aid</label>
+    </div>
+    <div>
+        <input type="checkbox" id="observationCheck" name="observationCheck" value="observationCheck">
+        <label for="observation">Observation</label>
+    </div>
+
+
     <form method="get" action="http://sandbox.bittsdevelopment.com/humber/httpdebug/acceptdata.php">
         <fieldset>
             <legend>Reporter's Information</legend>
@@ -20,7 +36,7 @@
             </div>
             <div>
                 <label for="reporterAge">Age</label>
-                <input type="number" id="reporterAge" name="reporterAge">
+                <input type="text" id="reporterAge" name="reporterAge">
             </div>
         </fieldset>
 
@@ -40,11 +56,11 @@
             <legend>Injured Passenger Details</legend>
             <div>
                 <label for="totalPassengers">Total number of passengers</label>
-                <input type="number" id="totalPassengers" name="totalPassenger">
+                <input type="text" id="totalPassengers" name="totalPassenger">
             </div>
             <div>
                 <label for="injuredPassengerNumber">Total number of injured passenger:</label>
-                <input type="number" id="injuredPassengerNumber" name="injuredPassengerNumber">
+                <input type="text" id="injuredPassengerNumber" name="injuredPassengerNumber">
             </div>
         </fieldset>
 
@@ -95,33 +111,12 @@
             <input type="text" id=incidentDate name="incidentDate">
             <label for="incidentTime">Incident time (hh:mm):</label>
             <input type="text" id="incidentTime" name="incidentTime">
+            <input type="radio" id="am" value="am" name="time">
             <label for="am">AM</label>
-            <input type="checkbox" id="am" value="am" name="amTime">
+            <input type="radio" id="pm" value="pm" name="time">
             <label for="am">PM</label>
-            <input type="checkbox" id="pm" value="pm" name="pmTime">
-            <div>
-                <label for="incidentDesc">Incident Description:</label>
-            </div>
-            <div>
-                <textarea id="incidentDesc" name="incidentDesc"></textarea>
-            </div>
         </fieldset>
-        <fieldset>
-            <legend>Location Details</legend>
-            <h2>Area</h2>
-            <div>
-                <input type="radio" id="urban" name="areaType">
-                <label for="urban">Urban</label>
-            </div>
-            <div>
-                <input type="radio" id="rural" name="areaType">
-                <label for="rural">Rural</label>
-            </div>
-            <div>
-                <input type="radio" id="areaUnknown" name="areaType">
-                <label for="areaUnknown">Unknown</label>
-            </div>
-        </fieldset>
+        <div><input type="submit" value="submit" /></div>
     </form>
 </body>
 </html>

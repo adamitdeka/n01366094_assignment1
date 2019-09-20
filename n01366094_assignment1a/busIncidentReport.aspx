@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="busIncidentReport.aspx.vb" Inherits="n01366094_assignment1.WebForm1" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="busIncidentReport.aspx.vb" Inherits="n01366094_assignment1a.busIncidentReport" %>
 
 <!DOCTYPE html>
 
@@ -8,20 +8,25 @@
     <title>Bus incident report</title>
 </head>
 <body>
+    
     <form id="busIncidentForm" runat="server" method="get" action="http://sandbox.bittsdevelopment.com/humber/httpdebug/acceptdata.php">
         <h1>Bus Incident Report Form</h1>
+        <h2>This is documenting an:</h2>
+        <div><input type="checkbox" value="injuryCheck" id="injuryCheck" name="injuryCheck"/><label for="injuryCheck">Injury</label></div>
+        <div><input type="checkbox" value="firstAidCheck" id="firstAidCheck" name="firstAidCheck"/><label for="firstAidCheck">First aid</label></div>
+        <div><input type="checkbox" value="observationCheck"  id="observationCheck" name="observationCheck"/><label for="observationCheck">Observation</label></div>
         <fieldset>
             <legend>Reporter's Information</legend>
             <div>
-                <label >Firstname:</label>
+                <label for="repoterFName">Firstname:</label>
                 <asp:TextBox runat="server" ID="repoterFName"></asp:TextBox>
             </div>
             <div>
-                <label>Lastname:</label>
+                <label for="reporterLName">Lastname:</label>
                 <asp:TextBox runat="server" ID="reporterLName"></asp:TextBox>
             </div>
             <div>
-                <label >Age</label>
+                <label for="reporterAge">Age</label>
                 <asp:TextBox runat="server" ID="reporterAge" ></asp:TextBox>
             </div>
         </fieldset>
@@ -33,7 +38,7 @@
                 <asp:TextBox runat="server" ID="tourOrigin"></asp:TextBox>
             </div>
             <div>
-                <label >Destination: </label>
+                <label for="tourDestination">Destination: </label>
                 <asp:TextBox runat="server" ID="tourDestination"></asp:TextBox>
             </div>
         </fieldset>
@@ -41,11 +46,11 @@
         <fieldset>
             <legend>Injured Passenger Details</legend>
             <div>
-                <label>Total number of passengers</label>
+                <label for="totalPassengers">Total number of passengers</label>
                 <asp:TextBox runat="server" ID="totalPassengers"></asp:TextBox>
             </div>
             <div>
-                <label>Total number of injured passenger:</label>
+                <label for="injuredPassengerNumber" >Total number of injured passenger:</label>
                 <asp:TextBox runat="server" ID="injuredPassengerNumber"></asp:TextBox>
             </div>
         </fieldset>
@@ -93,20 +98,16 @@
         </fieldset>
         <fieldset>
             <legend>Incident Details</legend>
-            <label for="incidentDate">Incident Date:</label>
+            <label for="incidentDate">Incident Date(yyyy/mm/dd):</label>
             <asp:TextBox runat="server" ID="incidentDate"></asp:TextBox>
-            <label for="incidentTime">Incident time:</label>
-            <asp:TextBox runat="server" ID="incidentTime"></asp:TextBox>    
+            <label for="incidentTime">Incident time(hh:mm):</label>
+            <asp:TextBox runat="server" ID="incidentTime"></asp:TextBox>  
+            <asp:RadioButtonList RepeatDirection="Horizontal" RepeatLayout="Flow" runat="server" ID="timeMeridian">
+                <asp:ListItem Text="AM" Value="am"></asp:ListItem>
+                <asp:ListItem Text="PM" Value="pm"></asp:ListItem>
+            </asp:RadioButtonList>
         </fieldset>
-        <fieldset>
-            <legend>Location Details</legend>
-            <h2>Area</h2>
-            <asp:RadioButtonList runat="server" ID="areaLocation">
-                <asp:ListItem Text="Urban" Value="urban"></asp:ListItem>
-                <asp:ListItem Text="Rural" Value="rural"></asp:ListItem>
-                <asp:ListItem Text="Unknown" Value="unknown"></asp:ListItem>
-            </asp:RadioButtonList>          
-        </fieldset>
+        <div><asp:Button Text="Submit" runat="server" /></div>
 
     </form>
 

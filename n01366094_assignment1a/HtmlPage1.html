@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Report date:15/09/2019</title>
+</head>
+<body>
+    <h1>Bus Incident Report Form</h1>
+    <form method="get" action="http://sandbox.bittsdevelopment.com/humber/httpdebug/acceptdata.php">
+        <fieldset>
+            <legend>Reporter's Information</legend>
+            <div>
+                <label for="reporterFName">Firstname:</label>
+                <input type="text" id="reporterFName" name="reporterFName">
+            </div>
+            <div>
+                <label for="reporterLName">Lastname:</label>
+                <input type="text" id="reporterLName" name="reporterLName">
+            </div>
+            <div>
+                <label for="reporterAge">Age</label>
+                <input type="number" id="reporterAge" name="reporterAge">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Tour Information</legend>
+            <div>
+                <label for="tourOrigin">Origin: </label>
+                <input type="text" id="tourOrigin" name="tourOrigin">
+            </div>
+            <div>
+                <label for="tourDestination">Destination: </label>
+                <input type="text" id="tourDestination" name="tourDestination">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Injured Passenger Details</legend>
+            <div>
+                <label for="totalPassengers">Total number of passengers</label>
+                <input type="number" id="totalPassengers" name="totalPassenger">
+            </div>
+            <div>
+                <label for="injuredPassengerNumber">Total number of injured passenger:</label>
+                <input type="number" id="injuredPassengerNumber" name="injuredPassengerNumber">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Vehicle Information</legend>
+            <div>
+                <label for="driverFName">Driver first name:</label>
+                <input type="text" id="driverFName" name="driverFName">
+            </div>
+            <div>
+                <label for="driverLName">Driver last name:</label>
+                <input type="text" id="driverLName" name="driverLName">
+            </div>
+            <div>
+                <label for="driverPhone">Driver phone number:</label>
+                <input type="tel" id="driverPhone" name="driverPhone">
+            </div>
+            <div>
+                <label for="driverAddress">Driver's address:</label>
+                <input type="text" id="driverAddress" name="driverAddress">
+            </div>
+            <div>
+                <label for="driverProvince">Province:</label>
+                <select>
+                    <option value="ab">Alberta(AB)</option>
+                    <option value="bc">British Columbia(BC)</option>
+                    <option value="mb">Manitoba(MB)</option>
+                    <option value="nb">New Brunswick(NB))</option>
+                    <option value="nl">Newfoundland and Labrador(NL)</option>
+                    <option value="nt">Northwest Territories(NT)</option>
+                    <option value="ns">Nova Scotia(NS)</option>
+                    <option value="nu">Nunavut(NU)</option>
+                    <option value="on">Ontario(ON)</option>
+                    <option value="pe">Prince Edward Island(PE)</option>
+                    <option value="qc">Quebec(QC)</option>
+                    <option value="sk">Saskatchewan(SK)</option>
+                    <option value="yt">Yukon(YT)</option>
+                </select>
+            </div>
+            <div>
+                <label for="licensePlate">Vehicle license plate number:</label>
+                <input type="text" id="licensePlate" name="licensePlate">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Incident Details</legend>
+            <label for="incidentDate">Incident Date(yyyy/mm/dd):</label>
+            <input type="text" id=incidentDate name="incidentDate">
+            <label for="incidentTime">Incident time (hh:mm):</label>
+            <input type="text" id="incidentTime" name="incidentTime">
+            <label for="am">AM</label>
+            <input type="checkbox" id="am" value="am" name="amTime">
+            <label for="am">PM</label>
+            <input type="checkbox" id="pm" value="pm" name="pmTime">
+            <div>
+                <label for="incidentDesc">Incident Description:</label>
+            </div>
+            <div>
+                <textarea id="incidentDesc" name="incidentDesc"></textarea>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Location Details</legend>
+            <h2>Area</h2>
+            <div>
+                <input type="radio" id="urban" name="areaType">
+                <label for="urban">Urban</label>
+            </div>
+            <div>
+                <input type="radio" id="rural" name="areaType">
+                <label for="rural">Rural</label>
+            </div>
+            <div>
+                <input type="radio" id="areaUnknown" name="areaType">
+                <label for="areaUnknown">Unknown</label>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>
